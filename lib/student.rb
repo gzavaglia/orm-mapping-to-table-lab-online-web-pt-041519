@@ -42,6 +42,5 @@ class Student
       self.send(("#{key}="), value)
     end
     save
-    self
   end
 end
