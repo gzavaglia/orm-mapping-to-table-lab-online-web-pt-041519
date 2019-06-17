@@ -34,6 +34,7 @@ class Student
       VALUES (?, ?)
     SQL
     DB[:conn].execute(save_sql, self.name, self.grade)
+    @id = DB[:conn].execute("SELECT last_insert")
   end
   
 end
