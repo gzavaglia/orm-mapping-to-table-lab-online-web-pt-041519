@@ -37,8 +37,8 @@ class Student
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
   
-  def self.create(stud_hash)
-    stud_hash.each{|key,value| self.send(("#{key}"), value)}
+  def self.create(arguments)
+    arguments.each{|key,value| self.send(("#{key}="), value)}
     save
   end
 end
