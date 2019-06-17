@@ -38,7 +38,9 @@ class Student
   end
   
   def self.create(arguments)
-    arguments.each{|key, value| self.send(("#{key}="), value)}
+    arguments.each do |key, value| 
+      self.send(("#{key}="), value)
+    end
     save
   end
 end
