@@ -38,6 +38,7 @@ class Student
   end
   
   def self.create(stud_hash)
-    
+    stud_hash.each{|key,value| self.send(("#{key}="), value)}
+    save
   end
 end
